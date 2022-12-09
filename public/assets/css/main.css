@@ -14,12 +14,21 @@ body {
 .wrapper { 
     display: grid; 
     grid-gap: 20px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "menu menu menu menu"
+    "promocao promocao promocao promocao"
+    "produtos produtos produtos produtos"
+    "detalhe-produtos detalhe-produtos detalhe-produtos detalhe-produtos"
+    "rodape rodape rodape rodape";
+    
     /*background-color: yellow;*/
 }
 
 
 .menu {
-    width: 100%;
+    grid-area: menu;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,76 +50,84 @@ body {
     margin: 5px;
 }
 
-.sidebar{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-areas: 
-      "hero hero cta1"
-      "hero hero cta2"
-    ;
-    /*background-color: pink;*/
+.gallery{
+    grid-area: rodape;
 }
 
-.hero{
-    grid-area: hero;
+.promocao{
+    grid-area: promocao;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 25px;
+}
+
+.promocao .destaque-e{
+    width: 70%;
+}
+
+.promocao .destaque-d{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+}
+
+.promocao .destaque-e .taco{
+    display: flex;
+    background-image: url(../imgs/img_taco_1.jpg);
     min-height: 400px;
     background-size: cover;
     padding: 50px;
-    display: flex;
-    background-position: bottom right;
-    background-image:  url(../imgs/img_taco_1.jpg);
     flex-direction: column;
-    justify-content: flex-start;
-}
-
-.hero h1 p{
-    color: aliceblue;
-}
-
-.cta1{
-    background-color: #ffc600;
-    grid-area: cta1;
-    display: grid;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+    align-items: flex-start;
 }
 
-.cta2{
+.promocao .destaque-d .promo1{
     background-color: #ffc600;
-    grid-area: cta2;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-items: center;
     align-content: center;
+    
 }
-
-
-.feature{
-    background-color: white;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid white;
+.promocao .destaque-d .promo2{
+    background-color: #ffc600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
 
 }
 
 .content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
+    grid-area: produtos;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+
+}
+
+.content .feature{
+    display: flex;
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid white;
+    flex-direction: column;
+
 }
 
 .content2{
-    background-color: white;
-    display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-area: detalhe-produtos;
+    display: flex;
     padding: 50px;
-}
-
-.content2 button{
-    background-color: #ffc600;
-    padding: 10px 20px;
-    border: 0px;
+    flex-direction: row;
+    column-gap: 20px;
+    background-color: white;
 }
 
 
