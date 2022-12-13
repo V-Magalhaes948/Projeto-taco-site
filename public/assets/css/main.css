@@ -41,7 +41,6 @@ body {
 
 .item {
     background-color: #ffc600;
-    flex-grow: 3;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
@@ -51,9 +50,6 @@ body {
     margin: 5px;
 }
 
-.gallery{
-    grid-area: rodape;
-}
 
 .promocao{
     grid-area: promocao;
